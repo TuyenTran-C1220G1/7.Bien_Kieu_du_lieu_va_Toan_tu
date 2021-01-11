@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert currency</title>
+</head>
+<body>
+<form>
+    <label style="margin-left: 1px">Amount</label>
+    <label style="margin-left: 100px">From Currency</label>
+    <label style="margin-left: 45px">To Currency</label> <br>
+    <input style="margin-left:1px; width: 100px; height: 15px" type="number" id="amount">
+    <select style="margin-left: 45px; width: 100px; height: 20px" id="fromCurrency">
+        <option value=23000>Viet Nam</option>
+        <option value=1>USD</option>
+    </select>
+    <select style="margin-left: 45px; width: 100px; height: 20px" id="toCurrency">
+        <option name="VND" value=23000 id="VND">Vietnam</option>
+        <option value=1 id="USD">USD</option>
+    </select>
+    <button style="margin-left: 45px; background-color: aqua" type="button" onclick="convertCurrency()">Convert</button> <br>
+    <label>Result:</label>
+    <label id="result1"></label>
+</form>
+</body>
+</html>
+<script>
+    function convertCurrency(){
+        let result;
+        let amount = document.getElementById('amount').value;
+        let from = document.getElementById('fromCurrency').value;
+        let to = document.getElementById('toCurrency').value;
+        result=amount*to/from;
+        let toCurrency = document.getElementById('toCurrency');
+        let toValue = toCurrency.options[toCurrency.selectedIndex].id;
+        document.getElementById('result1').innerHTML = result + ' ' + toValue;
+        var x = document.getElementById("VND").getAttribute("name")
+        alert(x);
+    }
+
+</script>

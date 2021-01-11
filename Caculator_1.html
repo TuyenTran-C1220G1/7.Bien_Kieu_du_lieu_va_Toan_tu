@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+<body>
+<form>
+    <label>Caculator</label><br>
+    <input style="height: 20px; width: 190px" type="number" id="number1">
+    <input style="height: 20px; width: 230px" type="number" id="number2"><br><br>
+    <button style="height: 20px; width: 100px" type="button" onclick="caculator(this)" id="+">Addition(+)</button>
+    <button style="height: 20px; width: 100px" type="button" onclick="caculator(this)" id="-">Subtraction(-)</button>
+    <button style="height: 20px; width: 120px" type="button" onclick="caculator(this)" id="*">Multiplication(X)</button>
+    <button style="height: 20px; width: 100px" type="button" onclick="caculator(this)" id="/">Division(/)</button> <br>
+    <label>Result: </label>
+    <label id="result"></label>
+</form>
+</body>
+</html>
+<script>
+    function caculator(input){
+        let number1=document.getElementById('number1').value;
+        number1 = +number1
+        let number2=document.getElementById('number2').value;
+        number2 = +number2
+        let result;
+       if(input.id=="+"){
+           result = number1 + number2
+       }else if(input.id=="-"){
+           result = number1 - number2;
+       }else if (input.id=="*"){
+           result = number2 * number1;
+       }else if (input.id=="/"){
+           result = number1 / number2;
+       }
+        document.getElementById("result").innerHTML = result;
+        console.log(input)
+    }
+    // function addition(){
+    //     let number1=document.getElementById('number1').value;
+    //     let number2=document.getElementById('number2').value;
+    //     let sub = number1 - number2;
+    //     document.getElementById("result").innerHTML = add;
+    // }
+</script>
